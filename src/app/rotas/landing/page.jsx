@@ -1,5 +1,5 @@
 "use client"
-import Cookies from "js-cookies"
+import Cookies from 'js-cookies'
 
 export default function landing() {
     console.log(Cookies.getItem("id"))
