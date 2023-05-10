@@ -1,7 +1,6 @@
 "use client"
 import Cookies from 'js-cookies'
 
-console.log(Cookies.getItem("id"))
 export default function landing() {
     
     return(
