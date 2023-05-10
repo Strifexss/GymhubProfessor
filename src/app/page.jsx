@@ -19,12 +19,13 @@ export default function Home() {
     axios.post('https://planet-scale-database-connect.vercel.app/loginProfessor', {
       email: email.current.value
     }).then(response => {
+      Cookies.setItem("id", response.data[0].id)
       if(response.data[0] != null) {
           console.log(response)
         console.log(senha.current.value)
         setCarregando(false)
         if(response.data[0].senha == senha.current.value && email.current.value == response.data[0].email) {
-          Cookies.setItem("id", response.data[0].id)
+          
           push('/rotas/landing')
         }
       }
