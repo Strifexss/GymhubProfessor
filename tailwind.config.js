@@ -13,6 +13,12 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
+    colors: {
+      'RoxoPadrao': '#8257E5',
+      'Cinza1': '#121214',
+      'Cinza2': '#202024',
+      'white': 'white'
+    }
   },
   plugins: [],
 }
