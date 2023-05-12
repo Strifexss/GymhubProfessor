@@ -2,11 +2,7 @@
 import Cookies from 'js-cookies'
 import { useEffect } from 'react'
 
-export default function landing() {
-    
-    useEffect(() => {
-        console.log(Cookies.getItem("id"))
-    },[])
+export default function Landing() {
 
     return(
     <div className="w-screen h-screen bg-Cinza1 flex justify-center items-center">
