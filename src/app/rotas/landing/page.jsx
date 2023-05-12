@@ -1,13 +1,18 @@
 "use client"
 import Cookies from 'js-cookies'
+import { useEffect } from 'react'
 
 export default function landing() {
     
+    useEffect(() => {
+        console.log(Cookies.getItem("id"))
+    },[])
+
     return(
     <div className="w-screen h-screen bg-Cinza1 flex justify-center items-center">
         <h1 className="text-[2rem] text-white">Logado</h1>
         {
-            document != undefined &&
+           typeof document != undefined &&
             <h1 className='text-white'>
                 {
                     Cookies.getItem("id")
