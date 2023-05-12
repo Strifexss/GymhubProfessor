@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
-import ProfessorImagem from "./imgs/ProfessorAcademia.jpeg"
 import loadingImage from "./imgs/LoadingIcon.gif"
+import Logo from "./imgs/GymHubProfessorLogo.png"
 import { useRef, useState } from 'react'
 import axios from 'axios'
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
@@ -40,11 +40,16 @@ export default function Home() {
   return (
     <div className='w-screen h-screen bg-Cinza1 flex justify-center items-center'>
       <div className='w-[90vw] md:w-[60rem] h-[30rem] bg-Cinza2 md:grid md:grid-cols-2 rounded-[1rem]'>
-        <div className='w-[100%]¨h-[100%] bg-[url(./imgs/ProfessorAcademia.jpeg)] bg-no-repeat bg-cover hidden md:block'>
+        <div className='w-[100%]¨h-[100%] bg-[url(./imgs/ProfessorImg.png)] bg-no-repeat bg-cover hidden md:block'>
 
         </div>
         <div className='w-[100%] h-[100%] bg-Cinza2 flex flex-col justify-center items-center rounded-[0.5rem]'>
-          <h1 className='text-[3rem] text-white text-center m-4'>GymHub <br /> Professor</h1>
+          <Image className='m-4'
+            src={Logo}
+            width={300}
+            height={300}
+            alt='GymHubProfessor' 
+          />
           { carregando &&
             <Image className='absolute rounded-[2rem]'
               src={loadingImage}
