@@ -1,9 +1,13 @@
 "use client"
-import Cookies from 'js-cookies'
 import { useEffect, useState } from 'react'
+import Cookies from 'js-cookies'
 
 export default function Landing() {
 
+    useEffect(() => {
+        console.log(Cookies.getItem("id"))
+    },[])
+    
     const [testes, setTeste] = useState("asdasd")
 
     return(
