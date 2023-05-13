@@ -36,7 +36,7 @@ export default function Aluno() {
                 {
                     data.map(x => {
                         return(
-                            <AlunosContainer/>
+                            <AlunosContainer key={x.id}/>
                         )
                     })
                 }
