@@ -4,7 +4,8 @@ import Cookies from "js-cookies"
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 import { useState } from "react"
 import AlunosContainer from "@/app/components/alunosContainer"
-export default function aluno() {
+
+export default function Aluno() {
     
     const [data, setData] = useState([])
 
