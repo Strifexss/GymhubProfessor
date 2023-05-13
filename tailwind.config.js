@@ -15,9 +15,13 @@ module.exports = {
     },
     colors: {
       'RoxoPadrao': '#8257E5',
+      "Roxo1": '#4e348a',
+      "Roxo2": '#2d1f4e',
       'Cinza1': '#121214',
       'Cinza2': '#202024',
-      'white': 'white'
+      'white': '#fff',
+      'BordaHeader': '#585858',
+      'LinksHeader': "#8f8d8d",
     }
   },
   plugins: [],
