@@ -36,7 +36,7 @@ export default function Aluno() {
                 {
                     data.map(x => {
                         return(
-                            <AlunosContainer key={x.id}/>
+                            <AlunosContainer key={x.id} nome={x.nome} email={x.email} telefone={x.telefone} plano={x.nomePlanos}/>
                         )
                     })
                 }

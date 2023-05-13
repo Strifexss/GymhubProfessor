@@ -40,7 +40,7 @@ export default function Home() {
   return (
     <div className='w-screen h-screen bg-Cinza1 flex justify-center items-center'>
       <div className='w-[90vw] md:w-[60rem] h-[30rem] bg-Cinza2 md:grid md:grid-cols-2 rounded-[1rem]'>
-        <div className='w-[100%]¨h-[100%] bg-[url(./imgs/ProfessorImg.png)] bg-no-repeat bg-cover hidden md:block'>
+        <div className='w-[100%]¨h-[100%] bg-[url(./imgs/ProfessorImg.png)] bg-center bg-no-repeat bg-cover hidden md:block'>
 
         </div>
         <div className='w-[100%] h-[100%] bg-Cinza2 flex flex-col justify-center items-center rounded-[0.5rem]'>
