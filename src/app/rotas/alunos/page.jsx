@@ -117,7 +117,7 @@ export default function Aluno() {
                             { 
                                 dataPlanos.map(x => {
                                     return(
-                                        <option value={x.id} className="p-4 text-white font-semibold">
+                                        <option key={x.id} value={x.id} className="p-4 text-white font-semibold">
                                           Plano: {x.nomePlanos}
                                         </option>
                                     )
@@ -144,6 +144,7 @@ export default function Aluno() {
                                     src={userImage}
                                     width={100}
                                     height={100}
+                                    alt="UserImage"
                                 />
                                 <h1 contentEditable className="text-white m-4 text-[1.5rem] font-semibold">
                                     {dataModal[0].nome}
