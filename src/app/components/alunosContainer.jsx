@@ -15,7 +15,7 @@ export default function alunosContainer(props) {
                 />
                 <h1 className="text-white m-6 text-[1.2rem] font-bold">{props.nome}</h1>
             </div>
-            <div className="flex flex-col ml-4">
+            <div className="flex flex-col ml-4 translate-y-[-1.2rem] md:translate-y-0">
                 <h1 className="text-white font-semibold">Email: {props.email}</h1>
                 <h1 className="text-white font-semibold">Telefone: {props.telefone}</h1>
                 <h1 className="text-white font-semibold">Plano: {props.plano}</h1>
