@@ -3,7 +3,8 @@ import userIcon from "../imgs/userIcon.png"
 
 export default function alunosContainer(props) {
     return(
-        <div className="m-4 w-[25rem] h-[12rem] gap-4 bg-Cinza2 justify-center rounded-[1rem] hover:border-RoxoPadrao hover:border-[2.5px] cursor-pointer flex flex-col">
+        <div onClick={props.funcao} 
+        className="m-4 w-[25rem] h-[12rem] gap-4 bg-Cinza2 justify-center rounded-[1rem] hover:border-RoxoPadrao hover:border-[2.5px] cursor-pointer flex flex-col">
             {/* Area da Imagem e o nome */}
             <div className="w-[100%] flex flex-row ml-4 items-center">
                 <Image className="border-RoxoPadrao rounded-[50%] border-solid border-[2px]"

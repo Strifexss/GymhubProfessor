@@ -20,6 +20,7 @@ module.exports = {
       'Cinza1': '#121214',
       'Cinza2': '#202024',
       'white': '#fff',
+      'black': 'black',
       'BordaHeader': '#585858',
       'LinksHeader': "#8f8d8d",
     }
