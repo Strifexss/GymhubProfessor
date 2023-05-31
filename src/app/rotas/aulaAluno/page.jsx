@@ -20,7 +20,7 @@ export default function AulaAluno() {
 
     useEffect(() => {
         
-        axios.post('http://localhost:3001/buscarAulasAluno', {
+        axios.post('https://planet-scale-database-connect.vercel.app/buscarAulasAluno', {
             id_aluno: Cookies.getItem('alunoID')
         })
         .then(response => {
@@ -29,7 +29,7 @@ export default function AulaAluno() {
         })
         .catch(err => console.log(response))
 
-        axios.post('http://localhost:3001/buscarAlunoEspecifico', {
+        axios.post('https://planet-scale-database-connect.vercel.app/buscarAlunoEspecifico', {
             id_aluno: Cookies.getItem('alunoID')
         })
         .then(response => {
