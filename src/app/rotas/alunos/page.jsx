@@ -7,8 +7,14 @@ import Butao from "@/app/components/butao"
 import AlunosContainer from "@/app/components/alunosContainer"
 import Image from "next/image"
 import userImage from "../../imgs/userIcon.png"
+import { useRouter } from 'next/navigation';
+
+
+
 export default function Aluno() {
     
+    const {push} = useRouter()
+
     /**Dados */
     const [data, setData] = useState([])
     const [dataPlanos, setDataPlanos] = useState([])
@@ -126,8 +132,20 @@ export default function Aluno() {
         console.log(dataModal)
     }
 
+    function linkAulas() {
+        Cookies.setItem("alunoID", dataModal[0].cliente_id)
+        push('./rotas/aulaAluno/')
+    }
+
     return(
         <div className="w-screen h-screen bg-Cinza1 flex flex-col items-center md:pt-[3.5rem] 2xl:pt-[5.5rem] pt-[4rem]">
+            <div className="w-[100%] h-[4rem] bg-Cinza2 border-b-[1px] border-white">
+                    <div className="flex flex-row w-[100%] items-start p-4">
+                        <h1 
+                        className="text-[1.5rem] font-bold mr-4 cursor-pointer text-white">
+                        Alunos</h1>
+                    </div>
+                </div>
             <header className="w-screen h-[5rem] bg-Roxo2 flex items-center">
                 <button onClick={() => setAdicionarModal(!adicionarModal)} 
                 className="w-[15rem] h-[3.5rem] m-4 fixed rounded-[0.5rem] bg-RoxoPadrao text-white font-semibold text-[1.5rem] hover:bg-Roxo1">
@@ -193,7 +211,7 @@ export default function Aluno() {
                             <Butao texto="Fechar" funcao={() => setAlunoModal(false)}/>
                             <Butao texto="Editar" funcao={() => setModificarModal(true)}/>
                             <Butao texto="Excluir" funcao={() => setExcluirModal(!excluirModal)}/>
-                            <Butao texto="Aulas"/>
+                            <Butao texto="Exercicios" funcao={() =>linkAulas()}/>
                         </section>
                         <section className="flex flex-col w-[100%] items-center gap-4 overflow-y-scroll" >
                             <div className="w-[90%] h-[8rem] text-center md:w-[40%] md:h-[15rem] bg-Cinza2 rounded-[1rem] m-4 flex flex-col justify-center items-center">
