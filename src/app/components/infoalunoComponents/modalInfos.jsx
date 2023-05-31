@@ -1,6 +1,6 @@
 import alterIcon from "../../imgs/alterIcon.png"
 import Image from "next/image"
-export default function modalInfo(props) {
+export default function ModalInfo(props) {
     return(
         <div className="text-white w-[30rem] h-[40rem] bg-Cinza1 fixed rounded-2xl flex flex-col items-center p-4">
             <div className="flex flex-row w-full items-center justify-start m-4">

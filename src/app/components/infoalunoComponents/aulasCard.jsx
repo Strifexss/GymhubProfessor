@@ -3,7 +3,7 @@ import SquareIcon from "../../imgs/quadradoIcon.png"
 import { useState } from "react"
 import {motion} from "framer-motion"
 
-export default function aulasCard(props) {
+export default function AulasCard(props) {
 
     const [openModal, setOpenModal] = useState(false)
 

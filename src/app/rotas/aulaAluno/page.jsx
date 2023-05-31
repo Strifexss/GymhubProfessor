@@ -9,7 +9,7 @@ import AulasCard from "@/app/components/infoalunoComponents/aulasCard"
 import { useRouter } from 'next/navigation';
 import ModalInfo from "@/app/components/infoalunoComponents/modalInfos"
 
-export default function aulaAluno() {
+export default function AulaAluno() {
 
 
     const {push} = useRouter()
