@@ -56,11 +56,6 @@ export default function Landing() {
                           Telefone:  {data[0] && data[0].telefone}
                         </h1>
                     </div>
-                    <div className='md:w-[20rem] h-[5rem] bg-Cinza2 rounded-2xl flex justify-start items-center p-4'>
-                        <h1 className='text-white font-semibold text-[1.5rem]'>
-                          Salario:  {data[0] && data[0].salario} R$
-                        </h1>
-                    </div>
             </div>
         </div>
     </div>

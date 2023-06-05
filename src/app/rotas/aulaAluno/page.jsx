@@ -8,6 +8,7 @@ import Butao from "@/app/components/butao"
 import AulasCard from "@/app/components/infoalunoComponents/aulasCard"
 import { useRouter } from 'next/navigation';
 import ModalInfo from "@/app/components/infoalunoComponents/modalInfos"
+import AdicionarModal from "@/app/components/infoalunoComponents/modalAdicionar"
 
 export default function AulaAluno() {
 
@@ -17,8 +18,9 @@ export default function AulaAluno() {
     const [aulasData, setAulasData] = useState([])
     const [modalInfoOpen, setModalInfoOpen] = useState(false)
     const [filteredData, setFilteredData] = useState([])
+    const [adicionarModal, setAdicionarModal] = useState(false)
 
-    useEffect(() => {
+   useEffect(() => {
         
         axios.post('https://planet-scale-database-connect.vercel.app/buscarAulasAluno', {
             id_aluno: Cookies.getItem('alunoID')
@@ -39,7 +41,7 @@ export default function AulaAluno() {
         })
         .catch(err => console.log(err))
 
-    },[])
+    },[]) 
 
     function linkarAlunos() {
         push('./rotas/alunos/')
@@ -50,20 +52,29 @@ export default function AulaAluno() {
         console.log(filteredData)
     }
 
+    function carregarAulas() {
+       axios.post("http://localhost:3001/buscarAulasAluno", {
+        id_aluno: Cookies.getItem("alunoID")
+       }).then(response => {
+        console.log(response.data)
+        setAulasData(response.data)
+       }).catch(err => console.log(err))
+    }
+
     return(
-        <div className="w-screen h-screen pt-[4rem] md:pt-[5.5rem] text-white flex flex-row justify-between">
+        <div className="w-screen h-screen pt-[4rem] md:pt-[3.5rem] 2xl:pt-[5.5rem] text-white flex flex-row justify-between">
             <div className="flex flex-col items-center w-[100%] h-[100%]">
                 <div className="w-[100%] h-[4rem] bg-Cinza2 border-b-[1px] border-white">
                     <div className="flex flex-row w-[100%] items-start p-4">
-                        <h1 onClick={() => linkarAlunos()} 
+                        <h1 onClick={() => carregarAulas()} 
                         className="text-[1.2rem] font-bold mr-4 cursor-pointer text-BordaHeader hover:text-white transition-[0.1s]">Alunos</h1>
                         <h1 className="text-[1.2rem] font-bold mr-4 cursor-pointer">-</h1>
                         <h1 className="text-[1.2rem] font-bold mr-4 cursor-pointer text-BordaHeader hover:text-white transition-[0.1s]">Exercicios {alunoData[0] && alunoData[0].nome}</h1>
                     </div>
                 </div>
-                <Butao texto="Adicionar"/>
+                <Butao texto="Adicionar" funcao={() => setAdicionarModal(!adicionarModal)}/>
                 {/**Campo aulas*/}
-                <div className="flex flex-row justify-center flex-wrap w-[100%] h-[100%] p-4">
+                <div className="flex flex-row justify-center flex-wrap w-[100%] h-[100%] p-4 overflow-y-scroll">
                     {
                         aulasData.map(aulas => {
                             return(
@@ -75,6 +86,13 @@ export default function AulaAluno() {
                                 </div>
                             )
                         })
+                    }{ adicionarModal &&
+                        <AdicionarModal
+                            id_aluno = {Cookies.getItem('alunoID')}
+                            fechar={() => setAdicionarModal(false)}
+                            cancelar={() => setAdicionarModal(false)}
+                            funcao={() => carregarAulas()}
+                        />
                     }
                 </div>
                 {
@@ -87,6 +105,8 @@ export default function AulaAluno() {
                         exercicio2={filteredData[0].exercicio_2}
                         exercicio3nome={filteredData[0].nomeExercicio3}
                         exercicio3={filteredData[0].exercicio_3}
+                        id = {filteredData[0].id}
+                        funcao = {() => carregarAulas()}
                     />
                 }
             </div>
