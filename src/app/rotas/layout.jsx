@@ -26,7 +26,6 @@ export default function Layout({children}) {
      />
      {/* Links */ } 
      <div className="flex flex-row gap-4 cursor-pointer text-BordaHeader text-[1.3rem] font-bold ">
-        <h1 onClick={rotasLanding} className="scale-90 hover:scale-100 hover:text-white hover:border-b-RoxoPadrao hover:border-b-4 m-2">Inicio</h1>
         <h1 onClick={rotaAlunos} className="scale-90 hover:scale-100 hover:text-white hover:border-b-RoxoPadrao hover:border-b-4 m-2">Alunos</h1>
       </div>
       <h1>

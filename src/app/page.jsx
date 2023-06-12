@@ -20,13 +20,14 @@ export default function Home() {
       email: email.current.value
     }).then(response => {
       Cookies.setItem("id", response.data[0].id)
+      Cookies.setItem("id_academia", response.data[0].id_usuario)
       if(response.data[0] != null) {
           console.log(response)
         console.log(senha.current.value)
         setCarregando(false)
         if(response.data[0].senha == senha.current.value && email.current.value == response.data[0].email) {
           
-          push('/rotas/landing')
+          push('/rotas/alunos')
         }
       }
       else {
