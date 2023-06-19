@@ -40,7 +40,7 @@ export default function ModalInfo(props) {
     }
 
     return(
-        <div className="text-white w-[95%] border-solid border-[1px] border-RoxoPadrao md:w-[30rem] h-[48rem] bg-Cinza1 fixed rounded-2xl flex flex-col items-center p-4">
+        <div className="text-white w-[95%] border-solid border-[1px] border-RoxoPadrao md:w-[30rem] h-[auto] md:translate-y-[-5rem] 2xl:translate-y-[-2rem] bg-Cinza1 fixed rounded-2xl flex flex-col items-center p-4">
             <div className="flex flex-row w-full justify-around">
                 <div className="flex flex-row items-center justify-start m-4">
                     <Image className="w-[3rem] m-4"

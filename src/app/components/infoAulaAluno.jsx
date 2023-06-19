@@ -5,7 +5,7 @@ import heightIcon from "../imgs/heightIcon.png"
 import pesoIcon from "../imgs/pesoIcon.png"
 export default function infoAulaAluno(props) {
     return(
-        <div className="hidden md:visible h-[100%] md:w-[30rem] 2xl:w-[40rem] bg-[#0D0C13] md:flex flex-col items-center mb-4">
+        <div className="hidden md:visible h-[100%] md:w-[30rem] 2xl:w-[40rem] bg-[#0D0C13] md:flex flex-col overflow-scroll static items-center mb-4">
             <div className="flex flex-col items-center">
                 <Image className="border-solid md:border-[0.2rem] 2xl:border-[0.3rem] w-[8rem] md:h-[8rem] border-RoxoPadrao rounded-[50%] p-4 m-4"
                     src={userIcon}

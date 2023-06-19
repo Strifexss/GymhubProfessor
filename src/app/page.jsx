@@ -27,7 +27,7 @@ export default function Home() {
         setCarregando(false)
         if(response.data[0].senha == senha.current.value && email.current.value == response.data[0].email) {
           
-          push('/rotas/alunos')
+          push('/rotas/calendario')
         }
       }
       else {

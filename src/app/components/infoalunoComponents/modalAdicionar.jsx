@@ -36,7 +36,7 @@ export default function AdicionarModal(props) {
         props.funcao
     }
     return(
-        <div className="w-[90%] md:w-[30rem] h-auto bg-Cinza1 fixed flex flex-col items-center rounded-2xl translate-y-[-11rem] md:translate-y-[-9rem] border-solid border-[2px] border-RoxoPadrao">
+        <div className="w-[90%] md:w-[30rem] h-auto bg-Cinza1 fixed flex flex-col items-center rounded-2xl translate-y-[-11rem] md:translate-y-[-10rem] border-solid border-[2px] border-RoxoPadrao overflow-scroll">
             <div className="w-full flex flex-row justify-around m-4 p-4">
                 <h1 className="text-white font-bold text-[1.2rem]">Adicionar novos Exercícios</h1>
                 <h1 onClick={props.fechar} 
@@ -54,6 +54,7 @@ export default function AdicionarModal(props) {
                     <option value="Domingo">Domingo</option>
                 </select>
             </div>
+            <div className="w-full h-[18rem] overflow-scroll">
             <div className="w-full flex flex-col items-start p-4">
                 <h1 className="text-white font-bold text-[1.2rem]">Exercicio 1:</h1>
                 <input className="w-full mt-2 h-[2rem] text-white p-4 border-none rounded-lg bg-black" 
@@ -74,6 +75,7 @@ export default function AdicionarModal(props) {
                 type="text"  placeholder="Agrupamento Muscular:" ref={nomeExercicio3}/>
                 <input className="w-full mt-2 h-[4rem] text-white p-4 border-none rounded-lg bg-black" 
                 type="text"  placeholder="Descrição:" ref={descricao3}/>
+            </div>
             </div>
             <div className="w-full h-full flex flex-row justify-end">
                 <button onClick={props.cancelar} 

@@ -14,6 +14,14 @@ export default function Layout({children}) {
   function rotaAlunos() {
     push('/rotas/alunos')
   }
+ 
+  function rotaCalendario() {
+    push('/rotas/calendario')
+  }
+
+  function deslogar() {
+    push('/')
+  }
 
   return(
     <div className="flex flex-col">
@@ -24,12 +32,18 @@ export default function Layout({children}) {
         height={250}
         alt="GymHubProfessor"
      />
-     {/* Links */ } 
-     <div className="flex flex-row gap-4 cursor-pointer text-BordaHeader text-[1.3rem] font-bold ">
-        <h1 onClick={rotaAlunos} className="scale-90 hover:scale-100 hover:text-white hover:border-b-RoxoPadrao hover:border-b-4 m-2">Alunos</h1>
+     {/* Links */ }
+     <div className="h-full flex flex-row items-center"> 
+      <div className="flex flex-row gap-4 cursor-pointer text-BordaHeader text-[1.3rem] font-bold ">
+          <h1 onClick={rotaCalendario} className="scale-90 hover:scale-100 hover:text-white hover:border-b-RoxoPadrao hover:border-b-4 m-2">Calendário</h1>
+        </div>
+      <div className="flex flex-row gap-4 cursor-pointer text-BordaHeader text-[1.3rem] font-bold ">
+          <h1 onClick={rotaAlunos} className="scale-90 hover:scale-100 hover:text-white hover:border-b-RoxoPadrao hover:border-b-4 m-2">Alunos</h1>
       </div>
-      <h1>
-        deslogar
+      </div>
+      <h1 onClick={deslogar} 
+      className="text-white hover:text-[gray] cursor-pointer font-bold ">
+        Deslogar
       </h1>  
     </header>
 

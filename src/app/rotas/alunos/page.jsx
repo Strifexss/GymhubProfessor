@@ -162,7 +162,7 @@ export default function Aluno() {
                     })
                 }
                { adicionarModal && 
-               <div className="fixed h-[auto] translate-y-[-5rem] md:translate-y-[0] w-screen md:w-[50%] bg-[#121214] border-RoxoPadrao rounded-xl border-solid border-[1px] flex flex-col justify-center items-center">
+               <div className="fixed h-[auto] translate-y-[-5rem] md:translate-y-[-5rem] w-screen md:w-[50%] bg-[#121214] border-RoxoPadrao rounded-xl border-solid border-[1px] flex flex-col justify-center items-center">
                     <Butao funcao={() => setAdicionarModal(!adicionarModal)} texto='Fechar' />
                     <div className="flex flex-row flex-wrap w-[100%] justify-center">
                         <input type="text" placeholder="Nome" ref={nomeRef}
@@ -206,7 +206,7 @@ export default function Aluno() {
                 {
                    alunoModal && 
                    <div 
-                   className=" scrol w-screen h-screen translate-y-[-11rem] md:translate-y-[-5rem] 2xl:translate-y-0 md:w-[70%] md:h-[70%] bg-Cinza1 fixed flex flex-col items-center rounded-[1rem] border-solid border-RoxoPadrao border-[2px]">
+                   className=" scrol w-screen h-screen translate-y-[-11rem] md:translate-y-[-5rem] 2xl:translate-y-[-5rem] md:w-[70%] md:h-[70%] bg-Cinza1 fixed flex flex-col items-center rounded-[1rem] border-solid border-RoxoPadrao border-[2px]">
                         <section className="w-[100%] flex flex-row items-center">
                             <Butao texto="Fechar" funcao={() => setAlunoModal(false)}/>
                             <Butao texto="Editar" funcao={() => setModificarModal(true)}/>
