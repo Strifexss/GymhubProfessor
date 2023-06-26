@@ -43,6 +43,18 @@ export default function Aluno() {
     const alturaModalRef = useRef()
     const pesoModalRef = useRef()
 
+    const [fecharEdit, setFecharEdit] = useState(false)
+
+    function confirmarFechar() {
+        if(fecharEdit == true) {
+            setModificarModal(true)
+            setFecharEdit(false)
+        }
+        else {
+            setAlunoModal(false)
+        }
+    }
+
     useEffect(() => {
         axios.post('https://planet-scale-database-connect.vercel.app/buscarClientes', {
         id_usuario: Cookies.getItem('id_academia') 
@@ -208,7 +220,7 @@ export default function Aluno() {
                    <div 
                    className=" scrol w-screen h-screen translate-y-[-11rem] md:translate-y-[-5rem] 2xl:translate-y-[-5rem] md:w-[70%] md:h-[70%] bg-Cinza1 fixed flex flex-col items-center rounded-[1rem] border-solid border-RoxoPadrao border-[2px]">
                         <section className="w-[100%] flex flex-row items-center">
-                            <Butao texto="Fechar" funcao={() => setAlunoModal(false)}/>
+                            <Butao texto="Fechar" funcao={() => confirmarFechar()}/>
                             <Butao texto="Editar" funcao={() => setModificarModal(true)}/>
                             <Butao texto="Excluir" funcao={() => setExcluirModal(!excluirModal)}/>
                             <Butao texto="Exercicios" funcao={() =>linkAulas()}/>
@@ -221,13 +233,15 @@ export default function Aluno() {
                                     height={100}
                                     alt="UserImage"
                                 />
-                                <h1 ref={nomeModalRef} contentEditable className="text-white m-4 text-[1.5rem] font-semibold">
+                                <h1 onClick={() => setFecharEdit(true)}
+                                ref={nomeModalRef} contentEditable className="text-white m-4 text-[1.5rem] font-semibold">
                                     { dataModal && dataModal[0].nome}
                                 </h1>
                             </div>
                             <div className="w-[90%] h-[9rem] bg-Cinza2 p-4 rounded-[1rem] flex flex-col justify-center">
                                 <h1 className="text-white m-2 text-[1.5rem] font-bold">Email:</h1>
-                                <h1 ref={emailModalRef} contentEditable className="text-white m-2 text-[1.5rem] font-bold">{dataModal && dataModal[0].email}</h1>
+                                <h1 onClick={() => setFecharEdit(true)} 
+                                ref={emailModalRef} contentEditable className="text-white m-2 text-[1.5rem] font-bold">{dataModal && dataModal[0].email}</h1>
                             </div>
                             <div className="w-[90%] h-[9rem] bg-Cinza2 p-4 rounded-[1rem] flex flex-col justify-center">
                                 <h1 className="text-white m-2 text-[1.5rem] font-bold">Plano:</h1>
@@ -235,23 +249,23 @@ export default function Aluno() {
                             </div>
                             <div className="w-[90%] h-[9rem] bg-Cinza2 p-4 rounded-[1rem] flex flex-col justify-center">
                                 <h1 className="text-white m-2 text-[1.5rem] font-bold">Objetivo:</h1>
-                                <h1 ref={objetivoModalRef} contentEditable className="text-white m-2 text-[1.5rem] font-bold">{dataModal && dataModal[0].objetivo}</h1>
+                                <h1 onClick={() => setFecharEdit(true)} 
+                                ref={objetivoModalRef} contentEditable className="text-white m-2 text-[1.5rem] font-bold">{dataModal && dataModal[0].objetivo}</h1>
                             </div>
                             <div className="w-[90%] h-[9rem] bg-Cinza2 p-4 rounded-[1rem] flex flex-col justify-center">
                                 <h1 className="text-white m-2 text-[1.5rem] font-bold">Telefone:</h1>
-                                <h1 ref={telefoneModalRef} contentEditable className="text-white m-2 text-[1.5rem] font-bold">{dataModal && dataModal[0].telefone}</h1>
-                            </div>
-                            <div className="w-[90%] h-[9rem] bg-Cinza2 p-4 rounded-[1rem] flex flex-col justify-center">
-                                <h1 className="text-white m-2 text-[1.5rem] font-bold">Senha:</h1>
-                                <h1 className="text-white m-2 text-[1.5rem] font-bold">Em breve</h1>
+                                <h1 onClick={() => setFecharEdit(true)} 
+                                ref={telefoneModalRef} contentEditable className="text-white m-2 text-[1.5rem] font-bold">{dataModal && dataModal[0].telefone}</h1>
                             </div>
                             <div className="w-[90%] h-[9rem] bg-Cinza2 p-4 rounded-[1rem] flex flex-col justify-center">
                                 <h1 className="text-white m-2 text-[1.5rem] font-bold">Peso:</h1>
-                                <h1 ref={pesoModalRef} contentEditable className="text-white m-2 text-[1.5rem] font-bold">{dataModal && dataModal[0].peso}</h1>
+                                <h1 onClick={() => setFecharEdit(true)} 
+                                ref={pesoModalRef} contentEditable className="text-white m-2 text-[1.5rem] font-bold">{dataModal && dataModal[0].peso}</h1>
                             </div>
                             <div className="w-[90%] h-[9rem] bg-Cinza2 p-4 rounded-[1rem] flex flex-col justify-center">
                                 <h1 className="text-white m-2 text-[1.5rem] font-bold">Altura:</h1>
-                                <h1 ref={alturaModalRef} contentEditable className="text-white m-2 text-[1.5rem] font-bold">{dataModal && dataModal[0].altura}</h1>
+                                <h1 onClick={() => setFecharEdit(true)} 
+                                ref={alturaModalRef} contentEditable className="text-white m-2 text-[1.5rem] font-bold">{dataModal && dataModal[0].altura}</h1>
                             </div>
                         </section>
                    </div> 
